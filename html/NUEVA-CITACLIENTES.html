@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Programar nueva Cita - ortho&amp;mas</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4169E1", // Royal Blue from user request
+                        "background-light": "#F0F4F8", // Light Gray from user request
+                        "background-dark": "#101422",
+                        "text-light": "#333333", // Dark Gray/Charcoal from user request
+                        "text-dark": "#F0F4F8"
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem", // A bit softer than default
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+
+<body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
+    <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <!-- TopNavBar Start -->
+            <header
+                class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/20 px-6 sm:px-10 py-4 bg-white dark:bg-background-dark dark:border-primary/30">
+                <div class="flex items-center gap-4">
+                    <div class="size-8 text-primary">
+                        <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <path clip-rule="evenodd"
+                                d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z"
+                                fill="currentColor" fill-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <h2 class="text-text-light dark:text-text-dark text-xl font-bold leading-tight tracking-[-0.015em]">
+                        ortho&amp;mas.</h2>
+                </div>
+                <div class="flex flex-1 justify-end gap-4 sm:gap-8">
+                    <div class="flex items-center gap-9"><a
+                            class="text-text-light dark:text-text-dark text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary"
+                            href="DETALLES-CITA.html">Mis citas</a></div>
+                    <button
+                        class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+                        <a class="truncate" href="NUEVA-CITACLIENTES.html">Programar nueva cita</a>
+                    </button>
+                </div>
+            </header>
+            <!-- TopNavBar End -->
+            <main class="flex flex-1 justify-center py-5 sm:py-10">
+                <div class="layout-content-container flex flex-col w-full max-w-6xl flex-1 px-4">
+                    <!-- Breadcrumbs Start -->
+                    <div class="flex flex-wrap gap-2 px-4 pb-4">
+                        <a class="text-gray-500 dark:text-gray-400 text-sm font-medium leading-normal" href="#">INICIO</a>
+                        <span class="text-gray-500 dark:text-gray-400 text-sm font-medium leading-normal">/</span>
+                        <a class="text-gray-500 dark:text-gray-400 text-sm font-medium leading-normal"
+                            href="DETALLES-CITA.html">CITAS</a>
+
+                        <span class="text-gray-500 dark:text-gray-400 text-sm font-medium leading-normal">/</span>
+                        <a class="text-text-light dark:text-text-dark text-sm font-medium leading-normal" href="NUEVA-CITACLIENTES.html">NUEVA CITAS</a>
+                    </div>
+                    <!-- Breadcrumbs End -->
+                    <!-- PageHeading Start -->
+                    <div class="flex flex-wrap justify-between gap-3 px-4 pb-6">
+                        <h1
+                            class="text-text-light dark:text-text-dark text-4xl font-black leading-tight tracking-[-0.033em] min-w-72">
+                            Programar Nueva Cita
+                        </h1>
+                    </div>
+                    <!-- PageHeading End -->
+                    <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 px-4">
+                        <!-- Left Column: Form -->
+                        <div class="lg:col-span-2 flex flex-col gap-8">
+                            <!-- TextField (Specialist) Start -->
+                            <div class="flex w-full flex-col">
+                                <label class="flex flex-col min-w-40 flex-1">
+                                    <p
+                                        class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2">
+                                        Especialista</p>
+                                    <select
+                                        class="form-select flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-primary/50 border border-gray-300 dark:border-gray-600 bg-white dark:bg-background-dark/50 focus:border-primary h-14 placeholder:text-gray-400 px-4 py-3 text-base font-normal leading-normal">
+                                        <option>Selecciona un Especialista</option>
+                                        <option value="dr-smith">Dr. Alan Smith</option>
+                                        <option value="dr-jones">Dr. Maria Jones</option>
+                                        <option value="dr-chen">Dr. David Chen</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <!-- TextField End -->
+                            <!-- Time Slot Selector Start -->
+                            <div>
+                                <h2
+                                    class="text-text-light dark:text-text-dark text-lg font-bold leading-tight tracking-[-0.015em] text-left pb-3">
+                                    Available Times for November 21</h2>
+                                <div class="grid grid-cols-3 gap-3">
+                                    <button
+                                        class="flex items-center justify-center rounded-lg border border-gray-300 dark:border-gray-600 h-12 text-center font-medium hover:border-primary hover:bg-primary/10 dark:hover:bg-primary/20 dark:hover:border-primary/50 transition-colors">09:00
+                                        AM</button>
+                                    <button
+                                        class="flex items-center justify-center rounded-lg border border-gray-300 dark:border-gray-600 h-12 text-center font-medium text-gray-400 bg-gray-100 dark:bg-gray-800 dark:text-gray-500 cursor-not-allowed"
+                                        disabled="">09:30 AM</button>
+                                    <button
+                                        class="flex items-center justify-center rounded-lg border border-primary bg-primary/10 dark:bg-primary/20 dark:border-primary/50 h-12 text-center font-bold text-primary transition-colors">10:00
+                                        AM</button>
+                                    <button
+                                        class="flex items-center justify-center rounded-lg border border-gray-300 dark:border-gray-600 h-12 text-center font-medium hover:border-primary hover:bg-primary/10 dark:hover:bg-primary/20 dark:hover:border-primary/50 transition-colors">10:30
+                                        AM</button>
+                                    <button
+                                        class="flex items-center justify-center rounded-lg border border-gray-300 dark:border-gray-600 h-12 text-center font-medium hover:border-primary hover:bg-primary/10 dark:hover:bg-primary/20 dark:hover:border-primary/50 transition-colors">11:00
+                                        AM</button>
+                                    <button
+                                        class="flex items-center justify-center rounded-lg border border-gray-300 dark:border-gray-600 h-12 text-center font-medium hover:border-primary hover:bg-primary/10 dark:hover:bg-primary/20 dark:hover:border-primary/50 transition-colors">11:30
+                                        AM</button>
+                                    <button
+                                        class="flex items-center justify-center rounded-lg border border-gray-300 dark:border-gray-600 h-12 text-center font-medium text-gray-400 bg-gray-100 dark:bg-gray-800 dark:text-gray-500 cursor-not-allowed"
+                                        disabled="">02:00 PM</button>
+                                    <button
+                                        class="flex items-center justify-center rounded-lg border border-gray-300 dark:border-gray-600 h-12 text-center font-medium hover:border-primary hover:bg-primary/10 dark:hover:bg-primary/20 dark:hover:border-primary/50 transition-colors">02:30
+                                        PM</button>
+                                    <button
+                                        class="flex items-center justify-center rounded-lg border border-gray-300 dark:border-gray-600 h-12 text-center font-medium hover:border-primary hover:bg-primary/10 dark:hover:bg-primary/20 dark:hover:border-primary/50 transition-colors">03:00
+                                        PM</button>
+                                </div>
+                            </div>
+                            <!-- Time Slot Selector End -->
+                            <!-- Notes/Reason Text Area -->
+                            <div class="flex w-full flex-col">
+                                <label
+                                    class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2"
+                                    for="notes">Nota / Motivo de la visita (Opcional)</label>
+                                <textarea
+                                    class="form-textarea w-full resize-none rounded-lg text-text-light dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-primary/50 border border-gray-300 dark:border-gray-600 bg-white dark:bg-background-dark/50 focus:border-primary placeholder:text-gray-400 px-4 py-3 text-base font-normal leading-normal"
+                                    id="notes" name="notes" placeholder="e.g. Annual check-up, tooth pain..."
+                                    rows="4">
+                                </textarea>
+                            </div>
+                        </div>
+                        <!-- Right Column: Calendar -->
+                        <div class="lg:col-span-3">
+                            <div class="bg-white dark:bg-background-dark/50 rounded-xl shadow-sm p-6">
+                                <h2
+                                    class="text-text-light dark:text-text-dark text-lg font-bold leading-tight tracking-[-0.015em] text-left pb-4">
+                                    Select a Date</h2>
+                                <div class="flex items-center justify-between pb-4">
+                                    <button
+                                        class="flex h-10 w-10 items-center justify-center rounded-full hover:bg-gray-200/60 dark:hover:bg-gray-700/60 transition-colors">
+                                        <span
+                                            class="material-symbols-outlined text-gray-600 dark:text-gray-400">chevron_left</span>
+                                    </button>
+                                    <p class="text-lg font-semibold text-text-light dark:text-text-dark">November 2024
+                                    </p>
+                                    <button
+                                        class="flex h-10 w-10 items-center justify-center rounded-full hover:bg-gray-200/60 dark:hover:bg-gray-700/60 transition-colors">
+                                        <span
+                                            class="material-symbols-outlined text-gray-600 dark:text-gray-400">chevron_right</span>
+                                    </button>
+                                </div>
+                                <div class="grid grid-cols-7 gap-1 text-center">
+                                    <div class="py-2 text-sm font-medium text-gray-500 dark:text-gray-400">Su</div>
+                                    <div class="py-2 text-sm font-medium text-gray-500 dark:text-gray-400">Mo</div>
+                                    <div class="py-2 text-sm font-medium text-gray-500 dark:text-gray-400">Tu</div>
+                                    <div class="py-2 text-sm font-medium text-gray-500 dark:text-gray-400">We</div>
+                                    <div class="py-2 text-sm font-medium text-gray-500 dark:text-gray-400">Th</div>
+                                    <div class="py-2 text-sm font-medium text-gray-500 dark:text-gray-400">Fr</div>
+                                    <div class="py-2 text-sm font-medium text-gray-500 dark:text-gray-400">Sa</div>
+                                    <div class="py-2 text-sm text-gray-400 dark:text-gray-600">27</div>
+                                    <div class="py-2 text-sm text-gray-400 dark:text-gray-600">28</div>
+                                    <div class="py-2 text-sm text-gray-400 dark:text-gray-600">29</div>
+                                    <div class="py-2 text-sm text-gray-400 dark:text-gray-600">30</div>
+                                    <div class="py-2 text-sm text-gray-400 dark:text-gray-600">31</div>
+                                    <div class="flex items-center justify-center"><button
+                                            class="h-10 w-10 rounded-full text-sm hover:bg-gray-200/60 dark:hover:bg-gray-700/60 transition-colors">1</button>
+                                    </div>
+                                    <div class="flex items-center justify-center"><button
+                                            class="h-10 w-10 rounded-full text-sm hover:bg-gray-200/60 dark:hover:bg-gray-700/60 transition-colors">2</button>
+                                    </div>
+                                    <div class="flex items-center justify-center"><button
+                                            class="h-10 w-10 rounded-full text-sm text-gray-400 dark:text-gray-500 cursor-not-allowed">3</button>
+                                    </div>
+                                    <div class="flex items-center justify-center"><button
+                                            class="h-10 w-10 rounded-full text-sm hover:bg-gray-200/60 dark:hover:bg-gray-700/60 transition-colors">4</button>
+                                    </div>
+                                    <div class="flex items-center justify-center"><button
+                                            class="h-10 w-10 rounded-full text-sm hover:bg-gray-200/60 dark:hover:bg-gray-700/60 transition-colors">5</button>
+                                    </div>
+                                    <div class="flex items-center justify-center"><button
+                                            class="h-10 w-10 rounded-full text-sm hover:bg-gray-200/60 dark:hover:bg-gray-700/60 transition-colors">6</button>
+                                    </div>
+                                    <div class="flex items-center justify-center"><button
+                                            class="h-10 w-10 rounded-full text-sm hover:bg-gray-200/60 dark:hover:bg-gray-700/60 transition-colors">7</button>
+                                    </div>
+                                    <div class="flex items-center justify-center"><button
+                                            class="h-10 w-10 rounded-full text-sm hover:bg-gray-200/60 dark:hover:bg-gray-700/60 transition-colors">8</button>
+                                    </div>
+                                    <div class="flex items-center justify-center"><button
+                                            class="h-10 w-10 rounded-full text-sm text-gray-400 dark:text-gray-500 cursor-not-allowed">9</button>
+                                    </div>
+                                    <div class="flex items-center justify-center"><button
+                                            class="h-10 w-10 rounded-full text-sm text-gray-400 dark:text-gray-500 cursor-not-allowed">10</button>
+                                    </div>
+                                    <div class="flex items-center justify-center"><button
+                                            class="h-10 w-10 rounded-full text-sm hover:bg-gray-200/60 dark:hover:bg-gray-700/60 transition-colors">11</button>
+                                    </div>
+                                    <div class="flex items-center justify-center"><button
+                                            class="h-10 w-10 rounded-full text-sm hover:bg-gray-200/60 dark:hover:bg-gray-700/60 transition-colors">12</button>
+                                    </div>
+                                    <div class="flex items-center justify-center"><button
+                                            class="h-10 w-10 rounded-full text-sm hover:bg-gray-200/60 dark:hover:bg-gray-700/60 transition-colors">13</button>
+                                    </div>
+                                    <div class="flex items-center justify-center"><button
+                                            class="h-10 w-10 rounded-full text-sm hover:bg-gray-200/60 dark:hover:bg-gray-700/60 transition-colors">14</button>
+                                    </div>
+                                    <div class="flex items-center justify-center"><button
+                                            class="h-10 w-10 rounded-full text-sm hover:bg-gray-200/60 dark:hover:bg-gray-700/60 transition-colors">15</button>
+                                    </div>
+                                    <div class="flex items-center justify-center"><button
+                                            class="h-10 w-10 rounded-full text-sm hover:bg-gray-200/60 dark:hover:bg-gray-700/60 transition-colors">16</button>
+                                    </div>
+                                    <div class="flex items-center justify-center"><button
+                                            class="h-10 w-10 rounded-full text-sm text-gray-400 dark:text-gray-500 cursor-not-allowed">17</button>
+                                    </div>
+                                    <div class="flex items-center justify-center"><button
+                                            class="h-10 w-10 rounded-full text-sm hover:bg-gray-200/60 dark:hover:bg-gray-700/60 transition-colors">18</button>
+                                    </div>
+                                    <div class="flex items-center justify-center"><button
+                                            class="h-10 w-10 rounded-full text-sm hover:bg-gray-200/60 dark:hover:bg-gray-700/60 transition-colors">19</button>
+                                    </div>
+                                    <div class="flex items-center justify-center"><button
+                                            class="h-10 w-10 rounded-full text-sm hover:bg-gray-200/60 dark:hover:bg-gray-700/60 transition-colors">20</button>
+                                    </div>
+                                    <div class="flex items-center justify-center"><button
+                                            class="h-10 w-10 rounded-full bg-primary text-white text-sm font-bold shadow-md">21</button>
+                                    </div>
+                                    <div class="flex items-center justify-center"><button
+                                            class="h-10 w-10 rounded-full text-sm hover:bg-gray-200/60 dark:hover:bg-gray-700/60 transition-colors">22</button>
+                                    </div>
+                                    <div class="flex items-center justify-center"><button
+                                            class="h-10 w-10 rounded-full text-sm hover:bg-gray-200/60 dark:hover:bg-gray-700/60 transition-colors">23</button>
+                                    </div>
+                                    <div class="flex items-center justify-center"><button
+                                            class="h-10 w-10 rounded-full text-sm text-gray-400 dark:text-gray-500 cursor-not-allowed">24</button>
+                                    </div>
+                                    <div class="flex items-center justify-center"><button
+                                            class="h-10 w-10 rounded-full text-sm hover:bg-gray-200/60 dark:hover:bg-gray-700/60 transition-colors">25</button>
+                                    </div>
+                                    <div class="flex items-center justify-center"><button
+                                            class="h-10 w-10 rounded-full text-sm hover:bg-gray-200/60 dark:hover:bg-gray-700/60 transition-colors">26</button>
+                                    </div>
+                                    <div class="flex items-center justify-center"><button
+                                            class="h-10 w-10 rounded-full text-sm hover:bg-gray-200/60 dark:hover:bg-gray-700/60 transition-colors">27</button>
+                                    </div>
+                                    <div class="flex items-center justify-center"><button
+                                            class="h-10 w-10 rounded-full text-sm hover:bg-gray-200/60 dark:hover:bg-gray-700/60 transition-colors">28</button>
+                                    </div>
+                                    <div class="flex items-center justify-center"><button
+                                            class="h-10 w-10 rounded-full text-sm hover:bg-gray-200/60 dark:hover:bg-gray-700/60 transition-colors">29</button>
+                                    </div>
+                                    <div class="flex items-center justify-center"><button
+                                            class="h-10 w-10 rounded-full text-sm hover:bg-gray-200/60 dark:hover:bg-gray-700/60 transition-colors">30</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Action Area -->
+                    <div class="mt-10 px-4 flex justify-end">
+                        <button
+                            class="flex min-w-48 max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-14 px-8 bg-primary text-white text-lg font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors shadow-lg shadow-primary/30 disabled:bg-gray-300 disabled:shadow-none disabled:cursor-not-allowed dark:disabled:bg-gray-600">
+                            <span class="truncate">Confirm cita</span>
+                        </button>
+
+                        <!-- Footer Section -->
+                        <footer class="absolute bottom-0 w-full p-6 text-center">
+                            <div class="mb-2">
+                                <a class="text-sm text-gray-600 dark:text-gray-400 underline hover:text-primary" href="#">¿Necesitas ayuda?</a>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 dark:text-gray-500">© 2025 ortho&amp;mas. Todos los derechos
+                                    reservados.</p>
+                            </div>
+                        </footer>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>

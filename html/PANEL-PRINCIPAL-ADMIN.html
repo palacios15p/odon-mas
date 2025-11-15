@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Dashboard Admin - ortho&amp;mas</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0b3fda",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101422",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            font-size: 24px;
+        }
+
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+    <div class="flex h-screen w-full">
+        <!-- SideNavBar -->
+        <aside class="flex w-64 flex-col border-r border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
+            <div class="flex h-full flex-col justify-between p-4">
+                <div class="flex flex-col gap-6">
+                    <div class="flex items-center gap-3 px-3">
+                        <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                            data-alt="Ortho&amp;Mas Logo"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCQ6c0Rlr7FVpmpTVszy2NoJhZf_ITyoXkKVlMC_gRPToXyCpFlofBf0wpd8_gZ0D3-Z1bjfrdISK_etgS1LCkI8_bPoZ9guAaAhlqs3FLh7UQ72Tx5WckQ2HaTXL2AIPqSce9a-CeMSfU1_PR_N6_BB42ed72SY-UtByAetHAXpiYcDko98fiMSWy75B_JRMJqe8IJuV_9t7ZzjI8_vz1FMMdn6Dkmf8EstHyZ5JR0kBe-KRXT-purSVxD02yqwmccAsBJ1osusR1G");'>
+                        </div>
+                        <div class="flex flex-col">
+                            <h1 class="text-gray-900 dark:text-white text-base font-bold leading-normal">ortho&amp;mas</h1>
+                            <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Admin Panel</p>
+                        </div>
+                    </div>
+                    <nav class="flex flex-col gap-2">
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 dark:bg-primary/20 text-primary dark:text-white"
+                            href="#">
+                            <span class="material-symbols-outlined fill">dashboard</span>
+                            <p class="text-sm font-medium leading-normal">Dashboard</p>
+                        </a>
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300"
+                            href="#">
+                            <span class="material-symbols-outlined">calendar_month</span>
+                            <p class="text-sm font-medium leading-normal">Calendario</p>
+                        </a>
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300"
+                            href="#">
+                            <span class="material-symbols-outlined">group</span>
+                            <p class="text-sm font-medium leading-normal">Pacientes</p>
+                        </a>
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300"
+                            href="#">
+                            <span class="material-symbols-outlined">medication</span>
+                            <p class="text-sm font-medium leading-normal">Doctores</p>
+                        </a>
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300"
+                            href="#">
+                            <span class="material-symbols-outlined">medical_services</span>
+                            <p class="text-sm font-medium leading-normal">Servicios</p>
+                        </a>
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300"
+                            href="#">
+                            <span class="material-symbols-outlined">bar_chart</span>
+                            <p class="text-sm font-medium leading-normal">Reportes</p>
+                        </a>
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300"
+                            href="#">
+                            <span class="material-symbols-outlined">settings</span>
+                            <p class="text-sm font-medium leading-normal">Configuración</p>
+                        </a>
+                    </nav>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <a class="flex items-center gap-3 px- py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300"
+                        href="ACCESO-SISTEMA-D-CITAS.html">
+                        <span class="material-symbols-outlined">logout</span>
+                        <p class="text-sm font-medium leading-normal">Exit</p>
+                        
+                    </a>
+                </div>
+            </div>
+        </aside>
+        <!-- Main Content -->
+        <main class="flex-1 overflow-y-auto">
+            <div class="p-8">
+                <!-- PageHeading -->
+                <div class="flex flex-wrap items-center justify-between gap-4">
+                    <div class="flex flex-col gap-1">
+                        <p class="text-gray-900 dark:text-white text-3xl font-bold leading-tight">Bienvenido, Admin</p>
+                        <p class="text-gray-500 dark:text-gray-400 text-base font-normal leading-normal">Aquí tienes un
+                            resumen de la actividad de la clínica hoy.</p>
+                    </div>
+                    <button
+                        class="flex items-center justify-center gap-2 overflow-hidden rounded-lg h-10 px-5 bg-primary text-white text-sm font-bold leading-normal shadow-sm hover:bg-primary/90">
+                        <span class="material-symbols-outlined" style="font-size: 20px;">add</span>
+                        <a class="truncate" href="NUEVA-CITACLIENTES.html">Nueva Cita</a>
+                    </button>
+                </div>
+                <!-- Stats -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+                    <div
+                        class="flex flex-col gap-2 rounded-xl p-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
+                        <p class="text-gray-800 dark:text-gray-200 text-base font-medium leading-normal">Citas Hoy</p>
+                        <p class="text-gray-900 dark:text-white text-3xl font-bold leading-tight">24</p>
+                        <p class="text-green-600 text-sm font-medium leading-normal">+5%</p>
+                    </div>
+                    <div
+                        class="flex flex-col gap-2 rounded-xl p-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
+                        <p class="text-gray-800 dark:text-gray-200 text-base font-medium leading-normal">Ingresos del
+                            Mes</p>
+                        <p class="text-gray-900 dark:text-white text-3xl font-bold leading-tight">$15,230</p>
+                        <p class="text-green-600 text-sm font-medium leading-normal">+2.1%</p>
+                    </div>
+                    <div
+                        class="flex flex-col gap-2 rounded-xl p-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
+                        <p class="text-gray-800 dark:text-gray-200 text-base font-medium leading-normal">Pacientes
+                            Nuevos</p>
+                        <p class="text-gray-900 dark:text-white text-3xl font-bold leading-tight">12</p>
+                        <p class="text-green-600 text-sm font-medium leading-normal">+8%</p>
+                    </div>
+                    <div
+                        class="flex flex-col gap-2 rounded-xl p-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
+                        <p class="text-gray-800 dark:text-gray-200 text-base font-medium leading-normal">Tasa de
+                            Confirmación</p>
+                        <p class="text-gray-900 dark:text-white text-3xl font-bold leading-tight">95%</p>
+                        <p class="text-red-600 text-sm font-medium leading-normal">-1.5%</p>
+                    </div>
+                </div>
+                <!-- Charts -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
+                    <div
+                        class="flex min-w-72 flex-1 flex-col gap-4 rounded-xl border border-gray-200 dark:border-gray-800 p-6 bg-white dark:bg-gray-900">
+                        <div class="flex flex-col">
+                            <p class="text-gray-800 dark:text-gray-200 text-base font-medium leading-normal">Volumen de
+                                Citas (Últimos 7 Días)</p>
+                            <div class="flex items-baseline gap-2">
+                                <p class="text-gray-900 dark:text-white text-3xl font-bold leading-tight">158 Citas</p>
+                                <p class="text-green-600 text-sm font-medium leading-normal">+12%</p>
+                            </div>
+                        </div>
+                        <div
+                            class="grid min-h-[200px] grid-flow-col gap-6 grid-rows-[1fr_auto] items-end justify-items-center px-3 pt-4">
+                            <div class="bg-primary/20 dark:bg-primary/30 w-full rounded" style="height: 60%;"></div>
+                            <p class="text-gray-500 dark:text-gray-400 text-xs font-bold leading-normal tracking-wide">
+                                LUN</p>
+                            <div class="bg-primary/20 dark:bg-primary/30 w-full rounded" style="height: 80%;"></div>
+                            <p class="text-gray-500 dark:text-gray-400 text-xs font-bold leading-normal tracking-wide">
+                                MAR</p>
+                            <div class="bg-primary/20 dark:bg-primary/30 w-full rounded" style="height: 40%;"></div>
+                            <p class="text-gray-500 dark:text-gray-400 text-xs font-bold leading-normal tracking-wide">
+                                MIÉ</p>
+                            <div class="bg-primary/20 dark:bg-primary/30 w-full rounded" style="height: 70%;"></div>
+                            <p class="text-gray-500 dark:text-gray-400 text-xs font-bold leading-normal tracking-wide">
+                                JUE</p>
+                            <div class="bg-primary w-full rounded" style="height: 90%;"></div>
+                            <p class="text-primary dark:text-white text-xs font-bold leading-normal tracking-wide">VIE
+                            </p>
+                            <div class="bg-primary/20 dark:bg-primary/30 w-full rounded" style="height: 50%;"></div>
+                            <p class="text-gray-500 dark:text-gray-400 text-xs font-bold leading-normal tracking-wide">
+                                SÁB</p>
+                            <div class="bg-primary/20 dark:bg-primary/30 w-full rounded" style="height: 20%;"></div>
+                            <p class="text-gray-500 dark:text-gray-400 text-xs font-bold leading-normal tracking-wide">
+                                DOM</p>
+                        </div>
+                    </div>
+                    <div
+                        class="flex min-w-72 flex-1 flex-col gap-4 rounded-xl border border-gray-200 dark:border-gray-800 p-6 bg-white dark:bg-gray-900">
+                        <div class="flex flex-col">
+                            <p class="text-gray-800 dark:text-gray-200 text-base font-medium leading-normal">Estado de
+                                Citas (Este Mes)</p>
+                            <div class="flex items-baseline gap-2">
+                                <p class="text-gray-900 dark:text-white text-3xl font-bold leading-tight">340 Citas</p>
+                                <p class="text-green-600 text-sm font-medium leading-normal">+3%</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-center min-h-[200px] flex-1">
+                            <div class="relative w-48 h-48">
+                                <svg class="w-full h-full" viewbox="0 0 36 36">
+                                    <path
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                                        fill="none" stroke="#ef4444" stroke-dasharray="10, 90" stroke-width="3"></path>
+                                    <path
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                                        fill="none" stroke="#f97316" stroke-dasharray="25, 75" stroke-dashoffset="-10"
+                                        stroke-width="3"></path>
+                                    <path
+                                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                                        fill="none" stroke="#22c55e" stroke-dasharray="65, 35" stroke-dashoffset="-35"
+                                        stroke-width="3"></path>
+                                </svg>
+                                <div class="absolute inset-0 flex flex-col items-center justify-center">
+                                    <span class="text-gray-900 dark:text-white text-3xl font-bold">285</span>
+                                    <span class="text-gray-500 dark:text-gray-400 text-sm">Completadas</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex justify-around">
+                            <div class="flex items-center gap-2">
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                <span class="text-gray-600 dark:text-gray-300 text-sm">Completadas</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-3 h-3 rounded-full bg-orange-500"></div>
+                                <span class="text-gray-600 dark:text-gray-300 text-sm">Programadas</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                <span class="text-gray-600 dark:text-gray-300 text-sm">Canceladas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Table Section -->
+                <div class="mt-8">
+                    <!-- SectionHeader -->
+                    <h2 class="text-gray-900 dark:text-white text-xl font-bold leading-tight">Próximas Citas</h2>
+                    <!-- Appointments Table -->
+                    <div class="mt-4 flow-root">
+                        <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                            <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+                                <div
+                                    class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 dark:ring-white/10 sm:rounded-lg">
+                                    <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-800">
+                                        <thead class="bg-gray-50 dark:bg-gray-900/50">
+                                            <tr>
+                                                <th class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 dark:text-white sm:pl-6"
+                                                    scope="col">Paciente</th>
+                                                <th class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-white"
+                                                    scope="col">Doctor</th>
+                                                <th class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-white"
+                                                    scope="col">Servicio</th>
+                                                <th class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-white"
+                                                    scope="col">Hora</th>
+                                                <th class="relative py-3.5 pl-3 pr-4 sm:pr-6" scope="col">
+                                                    <span class="sr-only">Edit</span>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody
+                                            class="divide-y divide-gray-200 dark:divide-gray-800 bg-white dark:bg-gray-900">
+                                            <tr>
+                                                <td
+                                                    class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white sm:pl-6">
+                                                    Ana Pérez</td>
+                                                <td
+                                                    class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                    Dr. Carlos Ruiz</td>
+                                                <td
+                                                    class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                    Limpieza Dental</td>
+                                                <td
+                                                    class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                    09:00 AM</td>
+                                                <td
+                                                    class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                                                    <a class="text-primary hover:text-primary/80" href="#">Ver<span
+                                                            class="sr-only">, Ana Pérez</span></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td
+                                                    class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white sm:pl-6">
+                                                    Juan Gómez</td>
+                                                <td
+                                                    class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                    Dra. Laura Méndez</td>
+                                                <td
+                                                    class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                    Ortodoncia</td>
+                                                <td
+                                                    class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                    09:30 AM</td>
+                                                <td
+                                                    class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                                                    <a class="text-primary hover:text-primary/80" href="#">Ver<span
+                                                            class="sr-only">, Juan Gómez</span></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td
+                                                    class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white sm:pl-6">
+                                                    María Rodríguez</td>
+                                                <td
+                                                    class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                    Dr. Carlos Ruiz</td>
+                                                <td
+                                                    class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                    Revisión General</td>
+                                                <td
+                                                    class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                    10:00 AM</td>
+                                                <td
+                                                    class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                                                    <a class="text-primary hover:text-primary/80" href="#">Ver<span
+                                                            class="sr-only">, María Rodríguez</span></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td
+                                                    class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white sm:pl-6">
+                                                    Luis Fernández</td>
+                                                <td
+                                                    class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                    Dr. Pedro Morales</td>
+                                                <td
+                                                    class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                    Blanqueamiento</td>
+                                                <td
+                                                    class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                    11:00 AM</td>
+                                                <td
+                                                    class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
+                                                    <a class="text-primary hover:text-primary/80" href="#">Ver<span
+                                                            class="sr-only">, Luis Fernández</span></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer class="text-center py-4">
+        <p class="text-xs text-[#A0AEC0] dark:text-gray-500">© 2025 ortho&amp;mas. Todos los derechos reservados.
+        </p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Gestión de Usuarios - ortho&amp;mas</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;900&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#0b3fda",
+            "background-light": "#f5f6f8",
+            "background-dark": "#101422",
+          },
+          fontFamily: {
+            "display": ["Public Sans"]
+          },
+          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+
+    .material-symbols-outlined.fill {
+      font-variation-settings: 'FILL' 1;
+    }
+  </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-[#333333] dark:text-gray-200">
+  <div class="flex min-h-screen">
+    <!-- SideNavBar -->
+    <aside class="flex flex-col w-64 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800 shrink-0">
+      <div class="flex flex-col flex-1 p-4">
+        <div class="flex items-center gap-3 p-2 mb-6">
+          <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Ortho&amp;mas logo"
+            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDa95rEctk5VGNJWSU96Z0ZFlXV3RIHwcUsNqLeqci9x7ZmL_Ea7R3hwC8SBt2dXEju51QZSiUcXe7zRPWbRNQ0wiC0PbUJBrv3mNxeC9ZZjTDMGdFRfAgnjErdyw331pOToXpb5VJHJfi_Lo1usJwcrS5A7GTbAvBR3Zm3UjqOjHC5rS1QH1zcoX3i9yqyjK_RsYw0fZNBrD3yaoV71Ta6MKo-Hz1xFUQFcwO1wOYiYnWajZd2AGUecBa1t4pngwCIcROLUAeMSjFb");'>
+          </div>
+          <div class="flex flex-col">
+            <h1 class="text-gray-900 dark:text-white text-base font-bold leading-normal">CLINACA MINUTO DE DIOS</h1>
+            <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Centro Odontológico</p>
+          </div>
+        </div>
+        <nav class="flex flex-col gap-2">
+          <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/20 dark:hover:text-white rounded-lg transition-colors"
+            href="#">
+            <span class="material-symbols-outlined">calendar_month</span>
+            <p class="text-sm font-medium leading-normal">Citas</p>
+          </a>
+          <a class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/20 dark:hover:text-white rounded-lg transition-colors"
+            href="#">
+            <span class="material-symbols-outlined">groups</span>
+            <p class="text-sm font-medium leading-normal">Pacientes</p>
+          </a>
+          <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary dark:bg-primary/20 dark:text-white font-bold"
+            href="#">
+            <span class="material-symbols-outlined fill">manage_accounts</span>
+            <p class="text-sm font-medium leading-normal">Usuarios</p>
+          </a>
+        </nav>
+      </div>
+      <div class="p-4 border-t border-gray-200 dark:border-gray-800">
+        <div
+          class="flex items-center gap-3 px-3 py-2 text-gray-600 dark:text-gray-300 hover:bg-red-500/10 hover:text-red-600 dark:hover:text-red-500 rounded-lg cursor-pointer transition-colors">
+          <span class="material-symbols-outlined">logout</span>
+          <p class="text-sm font-medium leading-normal">Cerrar Sesión</p>
+        </div>
+      </div>
+    </aside>
+    <!-- Main Content -->
+    <main class="flex-1 p-6 lg:p-10">
+      <div class="max-w-7xl mx-auto">
+        <!-- PageHeading -->
+        <header class="mb-8">
+          <p class="text-gray-900 dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">Gestión de
+            Usuarios</p>
+        </header>
+        <!-- Toolbar and Search -->
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4 mb-6">
+          <div class="w-full md:max-w-md">
+            <!-- SearchBar -->
+            <label class="flex flex-col min-w-40 h-12 w-full">
+              <div
+                class="flex w-full flex-1 items-stretch rounded-lg h-full bg-white dark:bg-gray-800 shadow-sm border border-gray-200 dark:border-gray-700">
+                <div class="text-gray-500 dark:text-gray-400 flex items-center justify-center pl-4">
+                  <span class="material-symbols-outlined">search</span>
+                </div>
+                <input
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-gray-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-transparent h-full placeholder:text-gray-500 dark:placeholder:text-gray-400 px-2 text-base font-normal leading-normal"
+                  placeholder="Buscar por nombre o correo..." value="" />
+              </div>
+            </label>
+          </div>
+          <div class="flex items-center gap-2 w-full md:w-auto">
+            <!-- Chips -->
+            <div class="flex gap-2">
+              <button
+                class="flex h-12 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-gray-800 px-4 shadow-sm border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+                <p class="text-gray-700 dark:text-gray-300 text-sm font-medium leading-normal">Filtrar por rol</p>
+                <span class="material-symbols-outlined text-gray-500 dark:text-gray-400">arrow_drop_down</span>
+              </button>
+            </div>
+            <!-- ToolBar Button -->
+            <button
+              class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 bg-primary text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4 shadow-sm hover:bg-primary/90 transition-colors">
+              <span class="material-symbols-outlined fill">add</span>
+              <span class="truncate">Añadir Usuario</span>
+            </button>
+          </div>
+        </div>
+        <!-- User Data Table -->
+        <div
+          class="bg-white dark:bg-gray-900 rounded-xl shadow-sm overflow-hidden border border-gray-200 dark:border-gray-800">
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm text-left">
+              <thead
+                class="bg-gray-50 dark:bg-gray-800 text-xs text-gray-600 dark:text-gray-300 uppercase tracking-wider">
+                <tr>
+                  <th class="px-6 py-4 font-medium" scope="col">Nombre</th>
+                  <th class="px-6 py-4 font-medium" scope="col">Correo Electrónico</th>
+                  <th class="px-6 py-4 font-medium" scope="col">Rol</th>
+                  <th class="px-6 py-4 font-medium" scope="col">Estado</th>
+                  <th class="px-6 py-4 font-medium text-right" scope="col">Acciones</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200 dark:divide-gray-800">
+                <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="flex items-center gap-3">
+                      <img class="h-10 w-10 rounded-full object-cover" data-alt="Avatar de Carlos Vega"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrRopt3b9LTii6i1SnvHI3fB4Jzix4xsS2Fq-RVIBFcnCci-M1il2Nhm-XwA3dSteXIJOU7vjRT_ZMINOFVRt2jY9Ifw4V8KSS4N-xsZzJhmGtBdRnYDzY5vOzx1al5f9pAfpscHLvH8qGWDg7ed2ioVLLeOVOq2JjzgicctuFP6q8mzIVZCrgxr8HP5s3klp4wIcszj4WZhaH6t29V8cd0nThN14vieMx-3dluJXqacme0Wrk67wxADIbJ0rQXSdIUSEtKhib7QJN" />
+                      <div>
+                        <div class="font-medium text-gray-900 dark:text-white">Carlos Vega</div>
+                        <div class="text-xs text-gray-500 dark:text-gray-400">@carlosv</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-gray-600 dark:text-gray-300">carlos.vega@example.com</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-gray-600 dark:text-gray-300">Administrador</td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span
+                      class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 dark:bg-green-900/50 text-green-800 dark:text-green-300">Activo</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-right">
+                    <div class="flex justify-end gap-2">
+                      <button
+                        class="p-2 text-gray-500 dark:text-gray-400 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-primary dark:hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-base">edit</span>
+                      </button>
+                      <button
+                        class="p-2 text-gray-500 dark:text-gray-400 rounded-md hover:bg-red-100 dark:hover:bg-red-900/50 hover:text-red-600 dark:hover:text-red-500 transition-colors">
+                        <span class="material-symbols-outlined text-base">delete</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="flex items-center gap-3">
+                      <img class="h-10 w-10 rounded-full object-cover" data-alt="Avatar de Dra. Ana Torres"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxE-MVxnmv-Hy4kYI632zner2qpXzvn98-qjhcKyKa6gLE8kEC6ZChPjuemSpOv7szUVv_OducZVc3DM80hLBZYp7ENqmIKpVEINEi7ndbJQ-i05tNrXq8unraI74ON4cK7MIu1rBjqxrRIwehVYosu3TaFbNmkFvWLsG1208BumQJkGVzvCcfbe4xlVZSCVCqq23uiIDFmUE5sgaKYs03s3gffA2CgwEpFxFddfSa0a4R7LVPZIFOrGp8mLdElqM2-uAiLgwIWslY" />
+                      <div>
+                        <div class="font-medium text-gray-900 dark:text-white">Dra. Ana Torres</div>
+                        <div class="text-xs text-gray-500 dark:text-gray-400">@anatorres</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-gray-600 dark:text-gray-300">ana.torres@orthomas.com</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-gray-600 dark:text-gray-300">Médico</td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span
+                      class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 dark:bg-green-900/50 text-green-800 dark:text-green-300">Activo</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-right">
+                    <div class="flex justify-end gap-2">
+                      <button
+                        class="p-2 text-gray-500 dark:text-gray-400 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-primary dark:hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-base">edit</span>
+                      </button>
+                      <button
+                        class="p-2 text-gray-500 dark:text-gray-400 rounded-md hover:bg-red-100 dark:hover:bg-red-900/50 hover:text-red-600 dark:hover:text-red-500 transition-colors">
+                        <span class="material-symbols-outlined text-base">delete</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="flex items-center gap-3">
+                      <img class="h-10 w-10 rounded-full object-cover" data-alt="Avatar de Luis Jimenez"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4d_4h9tCZ7yYoeYU94iabuzxIwhE7NoM-ov-QFLm2-rc_52Z3sq9N7WxiISPJ5xSoqBj-ykcIAfp4uCoftVVfRIYyDQdZ0nx0jf3ivmdD1nvd5S_0UUW1CEFelbHT3ODX7EQCnt2B1aV-Hdtdbdvg5CZitvDbzrTitMBPw97tnOUxnIZuTcnRk0s4kZoX4KuatSIPEfVcl7MRdTo3BFo8OXmIIlbbFIFThd2pIW804rNpcPMQfp2YTtRImIArkVYXy-9pfhe1RkoW" />
+                      <div>
+                        <div class="font-medium text-gray-900 dark:text-white">Luis Jimenez</div>
+                        <div class="text-xs text-gray-500 dark:text-gray-400">@luisj</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-gray-600 dark:text-gray-300">luis.jimenez@example.com</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-gray-600 dark:text-gray-300">Cliente</td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span
+                      class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 dark:bg-red-900/50 text-red-800 dark:text-red-300">Inactivo</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-right">
+                    <div class="flex justify-end gap-2">
+                      <button
+                        class="p-2 text-gray-500 dark:text-gray-400 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-primary dark:hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-base">edit</span>
+                      </button>
+                      <button
+                        class="p-2 text-gray-500 dark:text-gray-400 rounded-md hover:bg-red-100 dark:hover:bg-red-900/50 hover:text-red-600 dark:hover:text-red-500 transition-colors">
+                        <span class="material-symbols-outlined text-base">delete</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="flex items-center gap-3">
+                      <img class="h-10 w-10 rounded-full object-cover" data-alt="Avatar de Dr. Marco Polo"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvBE7ub9hcD_VmGFwxvaCMbprjH1bbEo1UNrBK4PzScDxYdREI46LIEAk4ejnJ9aG5FTkfU8AU0vdkR5Us33dQVVpGM6LxZo2r3W2yLD_oSbxUNVBpvkCX0UbKdOkVQovPC2JQpGDf-tk05hjBvMhvhgepCIhhFnOotYU74R6DAq2WVrCN0QxmIO5dkWDh5MgKxMGGI4bM6AL2H0U_miaXUsrqRR59LVDOliVSxswooSl4fPIN6KcHXZ66cn92c9a7H2fmLsojTxQ_" />
+                      <div>
+                        <div class="font-medium text-gray-900 dark:text-white">Dr. Marco Polo</div>
+                        <div class="text-xs text-gray-500 dark:text-gray-400">@marcop</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-gray-600 dark:text-gray-300">marco.polo@orthomas.com</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-gray-600 dark:text-gray-300">Médico</td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span
+                      class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 dark:bg-green-900/50 text-green-800 dark:text-green-300">Activo</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-right">
+                    <div class="flex justify-end gap-2">
+                      <button
+                        class="p-2 text-gray-500 dark:text-gray-400 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-primary dark:hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-base">edit</span>
+                      </button>
+                      <button
+                        class="p-2 text-gray-500 dark:text-gray-400 rounded-md hover:bg-red-100 dark:hover:bg-red-900/50 hover:text-red-600 dark:hover:text-red-500 transition-colors">
+                        <span class="material-symbols-outlined text-base">delete</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- Pagination -->
+          <div class="flex items-center justify-between p-4 border-t border-gray-200 dark:border-gray-800">
+            <span class="text-sm text-gray-600 dark:text-gray-400">Mostrando <span
+                class="font-semibold text-gray-900 dark:text-white">1-4</span> de <span
+                class="font-semibold text-gray-900 dark:text-white">12</span></span>
+            <div class="flex items-center gap-2">
+              <button
+                class="flex items-center justify-center h-8 w-8 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 text-sm">
+                <span class="material-symbols-outlined text-base">chevron_left</span>
+              </button>
+              <button
+                class="flex items-center justify-center h-8 w-8 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 text-sm">
+                <span class="material-symbols-outlined text-base">chevron_right</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="text-center py-4">
+    <p class="text-xs text-[#A0AEC0] dark:text-gray-500">© 2025 ortho&amp;mas. Todos los derechos reservados.
+    </p>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Dashboard Médico - ortho&amp;mas</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0b3fda",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101422",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display">
+    <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+        <div class="flex flex-row min-h-screen">
+            <!-- SideNavBar -->
+            <aside
+                class="flex flex-col w-64 bg-white dark:bg-background-dark border-r border-gray-200 dark:border-gray-800 p-4">
+                <div class="flex items-center gap-2 px-2 pb-6">
+                    <span class="material-symbols-outlined text-primary text-3xl">dentistry</span>
+                    <h1 class="text-xl font-bold text-gray-900 dark:text-white">ortho&amp;mas</h1>
+                </div>
+                <div class="flex-grow">
+                    <div class="flex flex-col gap-4">
+                        <div class="flex gap-3 items-center">
+                            <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                                data-alt="Profile picture of Dr. Apellido"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD6O9j8bF8f8i1KKUR_bEcUYTYH_li1j04RhWk6CvKv_ANqPb6Gutv2a1leIe9bg2Q5m4FyxN-YHZmYgPzUOzn9rUEYAIpw70-eeAGsp5B7mdYCpGLE4OC3i8rUkxXh-YAHbdkGl3y1xCP9_bWDUdxHdBBMZCg-8RLJgilfE3JOASk4F5m1juBn62I4wnyqXiWe4lrPDAS0iAVSb-8BiIoSO3CIpICK6ciaLIN5JM0YWvJ2FkmGExf4l4Gj5ZgC-jV6NorbMLdEwL6e");'>
+                            </div>
+                            <div class="flex flex-col">
+                                <h1 class="text-gray-900 dark:text-gray-100 text-base font-medium leading-normal">Dr.
+                                    Apellido</h1>
+                                <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">
+                                    Odontólogo General</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 dark:bg-primary/20"
+                                href="#">
+                                <span class="material-symbols-outlined text-primary dark:text-blue-300">dashboard</span>
+                                <p class="text-primary dark:text-blue-300 text-sm font-medium leading-normal">Dashboard
+                                </p>
+                            </a>
+                            <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+                                href="#">
+                                <span
+                                    class="material-symbols-outlined text-gray-700 dark:text-gray-300">calendar_month</span>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm font-medium leading-normal">
+                                    Calendario</p>
+                            </a>
+                            <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+                                href="#">
+                                <span class="material-symbols-outlined text-gray-700 dark:text-gray-300">groups</span>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm font-medium leading-normal">Pacientes
+                                </p>
+                            </a>
+                            <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+                                href="#">
+                                <span class="material-symbols-outlined text-gray-700 dark:text-gray-300">schedule</span>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm font-medium leading-normal">
+                                    Disponibilidad</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+                        href="#">
+                        <span class="material-symbols-outlined text-gray-700 dark:text-gray-300">logout</span>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm font-medium leading-normal">Cerrar Sesión</p>
+                    </a>
+                </div>
+            </aside>
+            <!-- Main Content -->
+            <main class="flex-1 p-8">
+                <div class="layout-content-container flex flex-col w-full">
+                    <!-- Header -->
+                    <header class="flex flex-wrap justify-between gap-3 items-center pb-6">
+                        <div class="flex flex-col gap-1">
+                            <p
+                                class="text-gray-900 dark:text-white text-3xl font-black leading-tight tracking-[-0.033em]">
+                                Bienvenido, Dr. Apellido</p>
+                            <p class="text-gray-500 dark:text-gray-400 text-base font-normal leading-normal">Este es el
+                                resumen de su jornada de hoy.</p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <button
+                                class="relative text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-white">
+                                <span class="material-symbols-outlined text-2xl">notifications</span>
+                                <span class="absolute -top-1 -right-1 flex h-2.5 w-2.5">
+                                    <span
+                                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500"></span>
+                                </span>
+                            </button>
+                            <button
+                                class="bg-primary hover:bg-primary/90 text-white font-medium py-2 px-4 rounded-lg flex items-center gap-2">
+                                <span class="material-symbols-outlined">add</span>
+                                Nueva Cita
+                            </button>
+                        </div>
+                    </header>
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <!-- Left Column: Agenda and Appointments List -->
+                        <div class="lg:col-span-2 flex flex-col gap-6">
+                            <!-- SegmentedButtons -->
+                            <div class="bg-white dark:bg-gray-900 p-1 rounded-lg">
+                                <div
+                                    class="flex h-10 flex-1 items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-800 p-1">
+                                    <label
+                                        class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-gray-700 has-[:checked]:shadow-sm has-[:checked]:text-primary dark:has-[:checked]:text-white text-gray-500 dark:text-gray-400 text-sm font-medium leading-normal transition-all duration-200">
+                                        <span class="truncate">Vista del Día</span>
+                                        <input checked="" class="invisible w-0" name="view-toggle" type="radio"
+                                            value="Vista del Día" />
+                                    </label>
+                                    <label
+                                        class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-gray-700 has-[:checked]:shadow-sm has-[:checked]:text-primary dark:has-[:checked]:text-white text-gray-500 dark:text-gray-400 text-sm font-medium leading-normal transition-all duration-200">
+                                        <span class="truncate">Vista Semanal</span>
+                                        <input class="invisible w-0" name="view-toggle" type="radio"
+                                            value="Vista Semanal" />
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- Appointments List -->
+                            <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-sm">
+                                <h2
+                                    class="text-gray-900 dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-4">
+                                    Citas para Hoy, 24 de Octubre</h2>
+                                <div class="flex flex-col gap-4">
+                                    <!-- Appointment Item 1 -->
+                                    <div
+                                        class="flex items-center p-3 rounded-lg border border-transparent hover:bg-primary/5 dark:hover:bg-primary/10 transition-colors duration-200">
+                                        <div class="flex items-center gap-4 flex-1">
+                                            <p class="text-gray-700 dark:text-gray-300 font-medium w-24">09:00 AM</p>
+                                            <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                                                data-alt="Profile picture of patient"
+                                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA-9NyuFdlhghhB_rQVx4NjFOiYiLjs4QsoCcKujW_1ZxbaeSzAcV8vcjjwJ7W16w6-l0DNJegc1B1WDpoMHoRVavi1xKVm9NsIVtPhkNKHnNDN0gti64opcWZaho6xhaXykD0ubbxD5JYQoocfEvWOGVLvG4TPF_RAlaQeJXT-4pyBbVrFMSkcMSQNv4ec2LfmZ_UblfUCn09gl-DkO8MjngdXZ7c7hqrBKSA9Ciln1ARP2xIByUnPs5yqJYmaJx7UteFezXf_KIz0");'>
+                                            </div>
+                                            <div class="flex flex-col">
+                                                <p class="text-gray-900 dark:text-white font-semibold">Ana García</p>
+                                                <p class="text-gray-500 dark:text-gray-400 text-sm">Limpieza Dental</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center gap-4">
+                                            <span
+                                                class="inline-flex items-center rounded-full bg-green-100 dark:bg-green-900 px-2.5 py-0.5 text-xs font-medium text-green-800 dark:text-green-300">Confirmada</span>
+                                            <button class="text-gray-500 dark:text-gray-400 hover:text-primary"><span
+                                                    class="material-symbols-outlined">more_vert</span></button>
+                                        </div>
+                                    </div>
+                                    <!-- Appointment Item 2 -->
+                                    <div
+                                        class="flex items-center p-3 rounded-lg border border-transparent hover:bg-primary/5 dark:hover:bg-primary/10 transition-colors duration-200">
+                                        <div class="flex items-center gap-4 flex-1">
+                                            <p class="text-gray-700 dark:text-gray-300 font-medium w-24">10:30 AM</p>
+                                            <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                                                data-alt="Profile picture of patient"
+                                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB5s4Hy4jHEcD818NHSPMPbLs9yjtj6dAzA5kLaZSTnzsnXugsLq8IL3UUzIZ08PrdoSbPe-rqWSOJJtum0G9S3Qef4GtsGHZHefNVDxMF4RcQLjCalOzgM1UgE6_DN2SJfLjsHRBfoaX2TLwHIXSdVbGnysOX_fKDcTNgQexxbdv0hRkIxPQVIvZlLC86fr7HU1Gr3U_3bCV1Y-3jNHzEc2Tw0um3SY4MrGxelQWUJfLHT9pVJVlYArspLw1T1IJQRJCwgiLc29EB8");'>
+                                            </div>
+                                            <div class="flex flex-col">
+                                                <p class="text-gray-900 dark:text-white font-semibold">Carlos Martínez
+                                                </p>
+                                                <p class="text-gray-500 dark:text-gray-400 text-sm">Revisión de
+                                                    Ortodoncia</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center gap-4">
+                                            <span
+                                                class="inline-flex items-center rounded-full bg-yellow-100 dark:bg-yellow-900 px-2.5 py-0.5 text-xs font-medium text-yellow-800 dark:text-yellow-300">Pendiente</span>
+                                            <button class="text-gray-500 dark:text-gray-400 hover:text-primary"><span
+                                                    class="material-symbols-outlined">more_vert</span></button>
+                                        </div>
+                                    </div>
+                                    <!-- Appointment Item 3 -->
+                                    <div
+                                        class="flex items-center p-3 rounded-lg border border-transparent hover:bg-primary/5 dark:hover:bg-primary/10 transition-colors duration-200">
+                                        <div class="flex items-center gap-4 flex-1">
+                                            <p class="text-gray-700 dark:text-gray-300 font-medium w-24">12:00 PM</p>
+                                            <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                                                data-alt="Profile picture of patient"
+                                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAc6Fg1UD-38NucWmsA9zNd919xpIcJzHEiaN6K1BEcNHY0nMbSpOlEti7Bf4lKBA9AEhKuHy_99PTkdQZ1lx2I5pPD6HeOdL8UVOxlMX0UXOpjGWuPnU1a-wn7bh9xp1jj190jFPituN_9swXqgXkAb-0tSRrwPHwRNayF6l8mCKo9hS45LOYJq3Z-HEiFtV9KNH_Nm64gnAKkTr-X-jUVWJYtvSVb0jXsjXksGsR3KBnLPF50FD3TrHDiyhF0KDKZFLD0jenq5jeT");'>
+                                            </div>
+                                            <div class="flex flex-col">
+                                                <p class="text-gray-900 dark:text-white font-semibold">Luisa Fernández
+                                                </p>
+                                                <p class="text-gray-500 dark:text-gray-400 text-sm">Blanqueamiento</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center gap-4">
+                                            <span
+                                                class="inline-flex items-center rounded-full bg-green-100 dark:bg-green-900 px-2.5 py-0.5 text-xs font-medium text-green-800 dark:text-green-300">Confirmada</span>
+                                            <button class="text-gray-500 dark:text-gray-400 hover:text-primary"><span
+                                                    class="material-symbols-outlined">more_vert</span></button>
+                                        </div>
+                                    </div>
+                                    <!-- Appointment Item 4 -->
+                                    <div class="flex items-center p-3 rounded-lg opacity-60">
+                                        <div class="flex items-center gap-4 flex-1">
+                                            <p class="text-gray-700 dark:text-gray-300 font-medium w-24">02:00 PM</p>
+                                            <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                                                data-alt="Profile picture of patient"
+                                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDsDSc8Knwth-tIo7qIXQUEV672jbgwG9-86nC9eSrC3TQl_CnL1pdN3rD4oUSyS4tXDldyAuD5g0Y-fVBTp-__OZvaDb1vhhjqaa-hAkfrPX1L_E6sgWdQ8jWnV5b6mZORiMkwaM8aMvr01Vulp7tOkkUjQIKleyiMfGTH9jMNbBJ1RN3qrP-52OPIi-uCRWWlDo-z4tirwrcwBSCeU6e1QGD9cHalB1YOyguhnA1NgbDNJGNCDNNUKY14JGAaFxCdWl4sgepRCtNV");'>
+                                            </div>
+                                            <div class="flex flex-col">
+                                                <p class="text-gray-900 dark:text-white font-semibold">Jorge Pérez</p>
+                                                <p class="text-gray-500 dark:text-gray-400 text-sm">Consulta General</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center gap-4">
+                                            <span
+                                                class="inline-flex items-center rounded-full bg-gray-200 dark:bg-gray-700 px-2.5 py-0.5 text-xs font-medium text-gray-800 dark:text-gray-300">Completada</span>
+                                            <button class="text-gray-500 dark:text-gray-400 hover:text-primary"><span
+                                                    class="material-symbols-outlined">more_vert</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Right Column: Calendar, Next Appointment, Quick Actions -->
+                        <div class="lg:col-span-1 flex flex-col gap-6">
+                            <!-- CalendarPicker -->
+                            <div class="bg-white dark:bg-gray-900 p-4 rounded-xl shadow-sm">
+                                <div class="flex min-w-72 w-full flex-col gap-0.5">
+                                    <div class="flex items-center p-1 justify-between">
+                                        <button class="hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full">
+                                            <span
+                                                class="material-symbols-outlined text-gray-800 dark:text-gray-200 flex size-10 items-center justify-center">chevron_left</span>
+                                        </button>
+                                        <p
+                                            class="text-gray-900 dark:text-white text-base font-bold leading-tight flex-1 text-center">
+                                            Octubre 2024</p>
+                                        <button class="hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full">
+                                            <span
+                                                class="material-symbols-outlined text-gray-800 dark:text-gray-200 flex size-10 items-center justify-center">chevron_right</span>
+                                        </button>
+                                    </div>
+                                    <div class="grid grid-cols-7 text-center">
+                                        <p
+                                            class="text-gray-500 dark:text-gray-400 text-[13px] font-bold leading-normal h-10 flex items-center justify-center">
+                                            D</p>
+                                        <p
+                                            class="text-gray-500 dark:text-gray-400 text-[13px] font-bold leading-normal h-10 flex items-center justify-center">
+                                            L</p>
+                                        <p
+                                            class="text-gray-500 dark:text-gray-400 text-[13px] font-bold leading-normal h-10 flex items-center justify-center">
+                                            M</p>
+                                        <p
+                                            class="text-gray-500 dark:text-gray-400 text-[13px] font-bold leading-normal h-10 flex items-center justify-center">
+                                            X</p>
+                                        <p
+                                            class="text-gray-500 dark:text-gray-400 text-[13px] font-bold leading-normal h-10 flex items-center justify-center">
+                                            J</p>
+                                        <p
+                                            class="text-gray-500 dark:text-gray-400 text-[13px] font-bold leading-normal h-10 flex items-center justify-center">
+                                            V</p>
+                                        <p
+                                            class="text-gray-500 dark:text-gray-400 text-[13px] font-bold leading-normal h-10 flex items-center justify-center">
+                                            S</p>
+                                        <!-- Calendar Days -->
+                                        <div class="h-10"></div>
+                                        <div class="h-10"></div>
+                                        <button
+                                            class="h-10 w-full text-gray-700 dark:text-gray-300 text-sm font-medium">
+                                            <div
+                                                class="flex size-full items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800">
+                                                1</div>
+                                        </button>
+                                        <button
+                                            class="h-10 w-full text-gray-700 dark:text-gray-300 text-sm font-medium">
+                                            <div
+                                                class="flex size-full items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800">
+                                                2</div>
+                                        </button>
+                                        <button
+                                            class="h-10 w-full text-gray-700 dark:text-gray-300 text-sm font-medium">
+                                            <div
+                                                class="flex size-full items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800">
+                                                3</div>
+                                        </button>
+                                        <button
+                                            class="h-10 w-full text-gray-700 dark:text-gray-300 text-sm font-medium">
+                                            <div
+                                                class="flex size-full items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800">
+                                                4</div>
+                                        </button>
+                                        <button
+                                            class="h-10 w-full text-gray-700 dark:text-gray-300 text-sm font-medium">
+                                            <div
+                                                class="flex size-full items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800">
+                                                5</div>
+                                        </button>
+                                        <button
+                                            class="h-10 w-full text-gray-700 dark:text-gray-300 text-sm font-medium">
+                                            <div
+                                                class="flex size-full items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800">
+                                                6</div>
+                                        </button>
+                                        <button class="h-10 w-full text-white text-sm font-medium">
+                                            <div
+                                                class="flex size-full items-center justify-center rounded-full bg-primary">
+                                                24</div>
+                                        </button>
+                                        <button
+                                            class="h-10 w-full text-gray-700 dark:text-gray-300 text-sm font-medium">
+                                            <div
+                                                class="flex size-full items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800">
+                                                25</div>
+                                        </button>
+                                        <button
+                                            class="h-10 w-full text-gray-700 dark:text-gray-300 text-sm font-medium">
+                                            <div
+                                                class="flex size-full items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800">
+                                                26</div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Next Appointment Card -->
+                            <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-sm">
+                                <h2
+                                    class="text-gray-900 dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-4">
+                                    Próxima Cita</h2>
+                                <div class="flex flex-col gap-4">
+                                    <div class="flex items-center gap-4">
+                                        <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12"
+                                            data-alt="Profile picture of patient Carlos Martínez"
+                                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBPHEMtIckFWQH1lJr2inj84pRK33IUG7MiRxQeshkufmS0AP7aharg03Y9RexDEWwhXQyHuId4LLUR4XnEVUxT6fA-QQ-dMaST2C-GZ1LyP_NGaEoibFI2fNObYVuhFxEF8NhZ-Rpr8Yk1G77iPoOpK4lNcMrJRRzxnP7Dq3eO3wBdWy3ykTf7coKMPZuNfPYAqdl2Agbv_FxVmjRrBttsnpyWcWFxVh33TUU4p20TnBe5xLRFsf4NCl13T-5pkEHm9P8Cwxz8-qBy");'>
+                                        </div>
+                                        <div>
+                                            <p class="text-lg font-semibold text-gray-900 dark:text-white">Carlos
+                                                Martínez</p>
+                                            <p class="text-sm text-gray-500 dark:text-gray-400">Revisión de Ortodoncia
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="border-t border-gray-200 dark:border-gray-700 pt-4 flex items-center justify-between">
+                                        <div class="flex items-center gap-2 text-gray-600 dark:text-gray-300">
+                                            <span class="material-symbols-outlined text-xl">schedule</span>
+                                            <span class="text-sm font-medium">10:30 AM - 11:00 AM</span>
+                                        </div>
+                                        <button class="text-sm font-semibold text-primary hover:underline">Ver
+                                            Historial</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Quick Actions Card -->
+                            <div class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-sm">
+                                <h2
+                                    class="text-gray-900 dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-4">
+                                    Acciones Rápidas</h2>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <button
+                                        class="flex flex-col items-center justify-center gap-2 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
+                                        <span class="material-symbols-outlined text-primary text-2xl">block</span>
+                                        <span class="text-sm font-medium text-gray-800 dark:text-gray-200">Bloquear
+                                            Horario</span>
+                                    </button>
+                                    <button
+                                        class="flex flex-col items-center justify-center gap-2 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
+                                        <span
+                                            class="material-symbols-outlined text-primary text-2xl">edit_calendar</span>
+                                        <span
+                                            class="text-sm font-medium text-gray-800 dark:text-gray-200">Gestionar</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <footer class="text-center py-4">
+        <p class="text-xs text-[#A0AEC0] dark:text-gray-500">© 2025 CLINACA MINUTO DE DIOS. Todos los derechos reservados.
+        </p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Iniciar Sesión - ortho&amp;mas  </title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4169e1", // Royal Blue
+                        "background-light": "#f8f9fa",
+                        "background-dark": "#101422",
+                        "text-light": "#333333",
+                        "text-dark": "#f8f9fa",
+                        "border-light": "#ced4da",
+                        "border-dark": "#4a5568"
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+
+<body class="font-display bg-background-light dark:bg-background-dark">
+    <div
+        class="relative flex h-screen w-full flex-col items-center justify-center group/design-root overflow-hidden p-4">
+        <main class="w-full max-w-4xl">
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 overflow-hidden rounded-xl shadow-lg bg-white dark:bg-background-dark/50">
+                <!-- Columna Izquierda: Marca -->
+                <div class="flex flex-col items-center justify-center p-8 md:p-12 bg-primary/10 dark:bg-primary/20">
+                    <img alt="Logo de ortho&amp;mas" class="w-48 mb-6"
+                        data-alt="Logo de ortho&amp;mas - una muela estilizada con aparatos de ortodoncia formando una sonrisa"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhtZeUAbhPlEcgRSwXOO9ehweSFKbbjg0RnmKft3YfhKFbZIDCPbohA-DIHCoMY2TKKqyuw1VBczYH1LlaL4NXFlW00cXgpBRUJFGqgqstZ88GGYFK2v0ISEv1630jWF73CWH3PFeCkF7vMoEghWNiCphvbZX8TQZjb7K_pfQn-gEjDEUEIjPubt67iGwYUedw1reDr1kDCBI4c-6TTjqZlKkTq17pvqHy8pND3-LTa8IjyUq-0ZJlY53YifBy-IkyjwrWFdmlzSEF" />
+                    <div class="text-center">
+                        <h1 class="text-2xl md:text-3xl font-bold text-primary dark:text-white">Portal del Cliente</h1>
+                        <p class="mt-2 text-sm text-text-light/80 dark:text-text-dark/80">Inicia sesión para gestionar
+                            tus citas y tratamientos de forma fácil y segura.</p>
+                    </div>
+                </div>
+                <!-- Columna Derecha: Formulario de Inicio de Sesión -->
+                <div class="flex flex-col justify-center p-8 md:p-12 bg-background-light dark:bg-background-dark">
+                    <div class="w-full">
+                        <h2 class="text-2xl font-bold text-text-light dark:text-text-dark mb-6">Iniciar Sesión</h2>
+                        <!-- Formulario -->
+                        <form class="flex flex-col gap-4">
+                            <!-- Campo de Correo Electrónico -->
+                            <label class="flex flex-col min-w-40 flex-1">
+                                <p class="text-text-light dark:text-text-dark text-sm font-medium leading-normal pb-2">
+                                    Correo Electrónico</p>
+                                <div class="flex w-full flex-1 items-stretch rounded-lg group">
+                                    <div
+                                        class="text-text-light/60 dark:text-text-dark/60 flex border border-border-light dark:border-border-dark bg-white dark:bg-background-dark/50 items-center justify-center pl-3 rounded-l-lg border-r-0 group-focus-within:ring-2 group-focus-within:ring-primary/50 group-focus-within:border-primary">
+                                        <span class="material-symbols-outlined" style="font-size: 20px;">mail</span>
+                                    </div>
+                                    <input
+                                        class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-0 border border-border-light dark:border-border-dark bg-white dark:bg-background-dark/50 focus:ring-2 focus:ring-primary/50 focus:border-primary h-12 placeholder:text-text-light/50 dark:placeholder:text-text-dark/50 px-3 rounded-l-none border-l-0 text-base font-normal leading-normal"
+                                        placeholder="tu.correo@ejemplo.com" type="email" value="" />
+                                </div>
+                            </label>
+                            <!-- Campo de Contraseña -->
+                            <label class="flex flex-col min-w-40 flex-1">
+                                <p class="text-text-light dark:text-text-dark text-sm font-medium leading-normal pb-2">
+                                    Contraseña</p>
+                                <div class="flex w-full flex-1 items-stretch rounded-lg group">
+                                    <div
+                                        class="text-text-light/60 dark:text-text-dark/60 flex border border-border-light dark:border-border-dark bg-white dark:bg-background-dark/50 items-center justify-center pl-3 rounded-l-lg border-r-0 group-focus-within:ring-2 group-focus-within:ring-primary/50 group-focus-within:border-primary">
+                                        <span class="material-symbols-outlined" style="font-size: 20px;">lock</span>
+                                    </div>
+                                    <input
+                                        class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-0 border border-border-light dark:border-border-dark bg-white dark:bg-background-dark/50 focus:ring-2 focus:ring-primary/50 focus:border-primary h-12 placeholder:text-text-light/50 dark:placeholder:text-text-dark/50 px-3 rounded-l-none border-l-0 text-base font-normal leading-normal"
+                                        placeholder="Introduce tu contraseña" type="password" value="" />
+                                </div>
+                            </label>
+                            <!-- Enlace de Olvidé mi Contraseña -->
+                            <a class="text-primary dark:text-primary/90 text-sm font-normal leading-normal self-end underline hover:text-primary/80 dark:hover:text-primary/70"
+                                href="#">Olvidé mi contraseña</a>
+                            <!-- Botón de Iniciar Sesión -->
+                            <div class="flex pt-2">
+                                <button
+                                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 flex-1 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 focus:outline-none focus:ring-4 focus:ring-primary/30 transition-colors duration-200">
+                                    <span class="truncate">Iniciar Sesión</span>
+                                </button>
+                            </div>
+                            <!-- Enlace de Registro -->
+                            <div class="pt-4 text-center">
+                                <p class="text-text-light dark:text-text-dark text-sm font-normal">
+                                    ¿No tienes cuenta? <a
+                                        class="font-medium text-primary dark:text-primary/90 underline hover:text-primary/80 dark:hover:text-primary/70"
+                                        href="#">Regístrate aquí</a>
+                                </p>
+                            </div>
+                        </form>
+                        <footer class="text-center py-4">
+                            <p class="text-xs text-[#A0AEC0] dark:text-gray-500">© 2025 ortho&amp;mas. Todos los derechos reservados.
+                            </p>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
